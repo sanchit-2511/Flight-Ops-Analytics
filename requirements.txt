@@ -1,0 +1,17 @@
+# Combined dependencies for the ingestion, etl, and dashboard services.
+# All three run from the same built image (see the root Dockerfile),
+# so one requirements file keeps the image simple and avoids version
+# drift between services. Grouped by which service needs what.
+
+# ingestion
+requests==2.32.3
+mysql-connector-python==9.0.0
+
+# etl
+pandas==2.2.2
+numpy==1.26.4
+
+# dashboard
+streamlit==1.38.0
+pydeck==0.9.1
+streamlit-autorefresh==1.0.1
